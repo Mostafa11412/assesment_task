@@ -7,7 +7,6 @@ import 'package:assesment_task/view/login/widgets/custom_divider.dart';
 import 'package:assesment_task/view/onbaording/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

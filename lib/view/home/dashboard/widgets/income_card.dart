@@ -1,4 +1,3 @@
-import 'package:assesment_task/core/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,7 +11,12 @@ class IncomeCard extends StatelessWidget {
       height: 127.h,
       padding: REdgeInsets.symmetric(vertical: 13, horizontal: 16),
       decoration: BoxDecoration(
-          color: AppConstants.purble1,
+          gradient: LinearGradient(
+            colors: [Colors.blue, Colors.purple],
+            begin: Alignment.bottomLeft,
+            end: Alignment.topRight,
+          ),
+          // color: AppConstants.purble1,
           borderRadius: BorderRadius.circular(22.r)),
       child: Directionality(
         textDirection: TextDirection.rtl,
@@ -38,8 +42,9 @@ class IncomeCard extends StatelessWidget {
             Row(
               children: [
                 Icon(
-                  Icons.info,
+                  Icons.info_sharp,
                   color: Colors.white,
+                  size: 15,
                 ),
                 Text(
                   "  اجمالي الايرادات هذا الشهر",
@@ -58,7 +63,7 @@ class IncomeCard extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        "30%",
+                        "30%  ",
                         style: TextStyle(
                             fontFamily: 'Zain',
                             fontSize: 12.sp,

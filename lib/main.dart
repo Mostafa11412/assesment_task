@@ -1,6 +1,3 @@
-import 'package:assesment_task/view/home/home_screen.dart';
-import 'package:assesment_task/view/login/login_screen.dart';
-import 'package:assesment_task/view/onbaording/onboarding_screen.dart';
 import 'package:assesment_task/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

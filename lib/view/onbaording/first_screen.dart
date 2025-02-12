@@ -2,7 +2,6 @@ import 'package:assesment_task/core/app_constants.dart';
 import 'package:assesment_task/core/app_images.dart';
 import 'package:assesment_task/core/app_strings.dart';
 import 'package:assesment_task/view/home/home_screen.dart';
-import 'package:assesment_task/view/onbaording/onboarding_screen.dart';
 import 'package:assesment_task/view/onbaording/widgets/title_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,19 +48,13 @@ class FirstScreen extends StatelessWidget {
             ),
             TitleSection(),
             Spacer(),
-            Stack(
-              children: [
-                SvgPicture.asset(
-                  AppImages.kidphoto,
-                  width: 375.w,
-                  height: 450.h,
-                ),
-                SvgPicture.asset(
-                  AppImages.boardingphoto,
-                  width: 375.w,
-                  height: 450.h,
-                ),
-              ],
+            SizedBox(
+              width: double.infinity,
+              child: SvgPicture.asset(
+                AppImages.boardingphoto,
+                fit: BoxFit.cover,
+                height: 450.h,
+              ),
             )
           ],
         ),

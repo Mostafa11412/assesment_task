@@ -1,8 +1,8 @@
 import 'package:assesment_task/core/app_constants.dart';
 import 'package:assesment_task/core/app_images.dart';
+import 'package:assesment_task/view/home/dashboard/appbar/appbar.dart';
 import 'package:assesment_task/view/home/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,14 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppConstants.purble1,
-      appBar: PreferredSize(
-        preferredSize: Size(double.infinity, 120.h),
-        child: AppBar(
-          backgroundColor: Colors.transparent,
-          title: const Text('Title'),
-        ),
-      ),
+      backgroundColor: AppConstants.primaryColor,
+      appBar: CustomAppBar(),
       body: Dashboard(),
       bottomNavigationBar: _buildBottomNavBar(),
     );
@@ -35,8 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: BottomNavigationBar(
+        iconSize: 44,
+        backgroundColor: Colors.white,
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.grey, // Highlight color
+        selectedItemColor: Colors.grey,
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,

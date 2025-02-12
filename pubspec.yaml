@@ -37,6 +37,7 @@ dependencies:
   flutter_svg: ^2.0.17
   flutter_screenutil: ^5.9.3
   google_fonts: ^6.2.1
+  table_calendar: ^3.2.0
 
 dev_dependencies:
   flutter_test:
