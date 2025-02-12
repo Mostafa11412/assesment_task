@@ -1,11 +1,17 @@
-import 'package:assesment_task/core/app_constants.dart';
+import 'package:assesment_task/core/utils/app_colors.dart';
 import 'package:assesment_task/view/home/dashboard/widgets/next_sessions/nex_sessions_card.dart';
+import 'package:assesment_task/view/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class NextSessionsPart extends StatelessWidget {
+class NextSessionsPart extends StatefulWidget {
   const NextSessionsPart({super.key});
 
+  @override
+  State<NextSessionsPart> createState() => _NextSessionsPartState();
+}
+
+class _NextSessionsPartState extends State<NextSessionsPart> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -34,18 +40,29 @@ class NextSessionsPart extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Color(0xFFF5FBFF),
                     borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: AppConstants.buttonC)),
+                    border: Border.all(color: AppColors.buttonC)),
                 child: Text(
                   "04",
                   style: TextStyle(
                       fontFamily: 'Zain',
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w700,
-                      color: AppConstants.buttonC),
+                      color: AppColors.buttonC),
                 ),
               ),
               Spacer(),
               GestureDetector(
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(
+                        body: 1,
+                      ),
+                    ),
+                    (route) => false,
+                  );
+                },
                 child: Row(
                   children: [
                     Text(

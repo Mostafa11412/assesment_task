@@ -1,12 +1,15 @@
-import 'package:assesment_task/core/app_constants.dart';
-import 'package:assesment_task/core/app_images.dart';
-import 'package:assesment_task/view/home/dashboard/appbar/appbar.dart';
+import 'package:assesment_task/core/utils/app_colors.dart';
+import 'package:assesment_task/core/utils/app_images.dart';
+import 'package:assesment_task/view/home/calendar/calendar.dart';
+import 'package:assesment_task/view/home/appbar/appbar.dart';
 import 'package:assesment_task/view/home/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  int body = 0;
+
+  HomeScreen({super.key, required this.body});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -14,13 +17,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  List<Widget> bodies = [Dashboard(), Calendar()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppConstants.primaryColor,
+      backgroundColor: AppColors.primaryColor,
       appBar: CustomAppBar(),
-      body: Dashboard(),
+      body: bodies[widget.body],
       bottomNavigationBar: _buildBottomNavBar(),
     );
   }
@@ -41,9 +45,15 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedLabelStyle: TextStyle(
             fontFamily: 'Zain', fontSize: 10, fontWeight: FontWeight.w800),
         onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomeScreen(
+                body: 0,
+              ),
+            ),
+            (route) => false,
+          );
         },
         items: [
           BottomNavigationBarItem(

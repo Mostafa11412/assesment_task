@@ -1,6 +1,7 @@
-import 'package:assesment_task/core/app_constants.dart';
+import 'package:assesment_task/core/utils/app_colors.dart';
 import 'package:assesment_task/global_widgets/custom_button.dart';
 import 'package:assesment_task/view/home/home_screen.dart';
+import 'package:assesment_task/view/login/login_screen.dart';
 import 'package:assesment_task/view/onbaording/first_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -27,14 +28,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           padding: const EdgeInsets.fromLTRB(24, 0, 24, 27),
           child: CustomButton(
               textColor: Colors.white,
-              buttonColor: AppConstants.buttonC,
+              buttonColor: AppColors.buttonC,
               buttonTitle: "التالي",
               onPressed: () {
                 if (pageController.page?.round() == totalPages - 1) {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomeScreen(),
+                        builder: (context) => HomeScreen(
+                          body: 0,
+                        ),
                       ));
                 } else {
                   pageController.nextPage(

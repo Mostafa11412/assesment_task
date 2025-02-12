@@ -3,7 +3,7 @@ class AppImages {
   static String appIconD = "assets/images/app_icon_dark.svg";
   static String barsAnim = "assets/images/bars_anim.svg";
   static String boardingphoto = "assets/images/oBphoto.svg";
-  static String kidphoto = "assets/images/kid.svg";
+  static String kidphoto = "assets/images/kidd.jpg";
   static String leftArrow = "assets/images/arrow_left.svg";
   static String mail = "assets/images/mail.jpg";
   static String lock = "assets/images/lock.jpg";

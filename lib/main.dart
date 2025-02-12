@@ -1,8 +1,12 @@
+import 'package:assesment_task/Di/di.dart';
 import 'package:assesment_task/splash_screen.dart';
+import 'package:assesment_task/view/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/date_symbol_data_file.dart';
 
-void main() {
+Future<void> main() async {
+  configureDependencies();
   runApp(const MyApp());
 }
 
@@ -21,7 +25,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const SplashScreen(),
+      child: SplashScreen(),
     );
   }
 }

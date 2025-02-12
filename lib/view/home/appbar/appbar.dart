@@ -1,4 +1,4 @@
-import 'package:assesment_task/core/app_images.dart';
+import 'package:assesment_task/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

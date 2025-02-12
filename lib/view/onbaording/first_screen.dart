@@ -1,6 +1,6 @@
-import 'package:assesment_task/core/app_constants.dart';
-import 'package:assesment_task/core/app_images.dart';
-import 'package:assesment_task/core/app_strings.dart';
+import 'package:assesment_task/core/utils/app_colors.dart';
+import 'package:assesment_task/core/utils/app_images.dart';
+import 'package:assesment_task/core/utils/app_strings.dart';
 import 'package:assesment_task/view/home/home_screen.dart';
 import 'package:assesment_task/view/onbaording/widgets/title_section.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppConstants.primaryColor,
+      backgroundColor: AppColors.primaryColor,
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,7 +30,9 @@ class FirstScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomeScreen(),
+                            builder: (context) => HomeScreen(
+                              body: 0,
+                            ),
                           ));
                     },
                     child: Text(

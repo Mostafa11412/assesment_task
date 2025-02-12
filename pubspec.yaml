@@ -38,11 +38,20 @@ dependencies:
   flutter_screenutil: ^5.9.3
   google_fonts: ^6.2.1
   table_calendar: ^3.2.0
+  intl: ^0.20.2
+  weekly_date_picker: ^1.4.2
+  dio: ^5.8.0+1
+  flutter_bloc: ^9.0.0
+  get_it: ^8.0.3
+  injectable: ^2.5.0
+  fluttertoast: ^8.2.12
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  build_runner: ^2.4.15
+  injectable_generator:
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your

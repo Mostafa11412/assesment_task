@@ -1,5 +1,5 @@
-import 'package:assesment_task/core/app_constants.dart';
-import 'package:assesment_task/core/app_images.dart';
+import 'package:assesment_task/core/utils/app_colors.dart';
+import 'package:assesment_task/core/utils/app_images.dart';
 import 'package:assesment_task/view/home/dashboard/widgets/numWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,8 +14,7 @@ class Analysiscard extends StatelessWidget {
       height: 85.h,
       padding: REdgeInsets.symmetric(vertical: 13, horizontal: 27),
       decoration: BoxDecoration(
-          color: AppConstants.purble2,
-          borderRadius: BorderRadius.circular(20.r)),
+          color: AppColors.purble2, borderRadius: BorderRadius.circular(20.r)),
       child: Directionality(
           textDirection: TextDirection.rtl,
           child: Row(

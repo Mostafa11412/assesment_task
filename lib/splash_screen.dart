@@ -1,8 +1,8 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:assesment_task/core/app_constants.dart';
-import 'package:assesment_task/core/app_images.dart';
-import 'package:assesment_task/core/app_strings.dart';
+import 'package:assesment_task/core/utils/app_colors.dart';
+import 'package:assesment_task/core/utils/app_images.dart';
+import 'package:assesment_task/core/utils/app_strings.dart';
 import 'package:assesment_task/view/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppConstants.primaryColor,
+      backgroundColor: AppColors.primaryColor,
       body: SafeArea(
         child: Center(
           child: Column(
