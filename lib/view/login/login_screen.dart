@@ -35,11 +35,6 @@ class LoginScreen extends StatelessWidget {
                               decoration: TextDecoration.underline,
                               decorationColor: AppConstants.buttonC),
                         )),
-                    Spacer(),
-                    IconButton(
-                      icon: Image.asset("assets/images/Group.png"),
-                      onPressed: () {},
-                    )
                   ],
                 ),
                 SizedBox(
