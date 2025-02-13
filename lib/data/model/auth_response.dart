@@ -1,5 +1,4 @@
 import 'package:assesment_task/data/model/result.dart';
-import 'package:assesment_task/domain/entities/authEntitiy/result_entity.dart';
 
 class AuthResponse {
   Result? result;

@@ -1,9 +1,7 @@
 import 'package:assesment_task/core/utils/app_colors.dart';
 import 'package:assesment_task/view/home/dashboard/widgets/next_sessions/nex_sessions_card.dart';
-import 'package:assesment_task/view/home/dashboard/widgets/next_sessions/next_sessions_part.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/date_symbol_data_file.dart';
 import 'package:intl/intl.dart';
 import 'package:weekly_date_picker/weekly_date_picker.dart';
 

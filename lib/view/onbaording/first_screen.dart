@@ -1,7 +1,7 @@
 import 'package:assesment_task/core/utils/app_colors.dart';
 import 'package:assesment_task/core/utils/app_images.dart';
 import 'package:assesment_task/core/utils/app_strings.dart';
-import 'package:assesment_task/view/home/home_screen.dart';
+import 'package:assesment_task/view/login/login_screen.dart';
 import 'package:assesment_task/view/onbaording/widgets/title_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,9 +30,7 @@ class FirstScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomeScreen(
-                              body: 0,
-                            ),
+                            builder: (context) => LoginScreen(),
                           ));
                     },
                     child: Text(

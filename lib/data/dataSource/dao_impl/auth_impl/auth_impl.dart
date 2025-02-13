@@ -15,21 +15,21 @@ class AuthDataSourceImpl extends AuthDataSource {
   Future<Either<AuthResponse, String>> signIn(
       String email, String password) async {
     try {
-      var response =
-          await apiManager.postData(AppConstants.AuthEndPoint, body: {
-        "userNameOrEmailAddress": "yasser@farid.com",
-        "password": "123456",
-        "rememberClient": true
-      });
+      var response = await apiManager.postData(AppConstants.AuthEndPoint,
+          body: {
+            "userNameOrEmailAddress": email,
+            "password": password,
+            "rememberClient": true
+          });
 
       AuthResponse authResponse = AuthResponse.fromJson(response.data);
-      // if (!authResponse.success!) {
-      //   return Right(authResponse.error['details']);
-      // }
+      if (!authResponse.success!) {
+        return Right(
+            authResponse.error['details'].replaceAll(RegExp(r'[\[\]]'), ''));
+      }
       return Left(authResponse);
     } catch (e) {
       debugPrint(e.toString());
-      throw (Exception(e.toString()));
       return Right("حدث خطأ ما ");
     }
   }

@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:assesment_task/core/utils/app_colors.dart';
 import 'package:assesment_task/core/utils/app_images.dart';
 import 'package:assesment_task/view/home/calendar/calendar.dart';

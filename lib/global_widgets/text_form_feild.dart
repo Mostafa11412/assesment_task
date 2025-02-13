@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:assesment_task/core/utils/app_colors.dart';
 import 'package:assesment_task/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,23 +34,22 @@ class _CustomFormFeildState extends State<CustomFormFeild> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 327.w,
-      height: 56.h,
+      // height: 56.h,
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: TextFormField(
           controller: widget.controller,
-          style: Theme.of(context)
-              .textTheme
-              .titleSmall!
-              .copyWith(fontSize: 18.sp, color: Colors.black),
+          style: TextStyle(
+              fontFamily: 'Zain', fontSize: 14.sp, fontWeight: FontWeight.w700),
           keyboardType: widget.keyboardType,
           maxLength: widget.maxLenght,
           validator: widget.validator,
           obscureText: widget.isObscured,
           decoration: InputDecoration(
-              errorStyle: TextStyle(color: Colors.red),
+              // contentPadding: REdgeInsets.all(16),
+              // errorStyle: TextStyle(color: Colors.red),
               counterText: '',
-              fillColor: Colors.white,
+              fillColor: Color(0xFFF9FAFB),
               filled: true,
               prefixIcon: widget.typePass
                   ? IconButton(
@@ -67,16 +67,23 @@ class _CustomFormFeildState extends State<CustomFormFeild> {
                 width: 20.w,
                 height: 20.h,
               ),
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(16.r)),
-              errorBorder:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(16.r)),
-              enabledBorder:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(16.r)),
-              focusedBorder:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(16.r)),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16.r),
+                  borderSide: BorderSide(color: Colors.transparent)),
+              errorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16.r),
+                  borderSide: BorderSide(color: Colors.transparent)),
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(
+                    16.r,
+                  ),
+                  borderSide: BorderSide(color: Colors.transparent)),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16.r),
+                  borderSide: BorderSide(color: AppColors.buttonC)),
               focusedErrorBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16.r))),
+                  borderRadius: BorderRadius.circular(16.r),
+                  borderSide: BorderSide(color: AppColors.buttonC))),
         ),
       ),
     );

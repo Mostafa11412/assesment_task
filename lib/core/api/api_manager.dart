@@ -4,23 +4,24 @@ import 'package:injectable/injectable.dart';
 
 @singleton
 class ApiManager {
-  final Dio dio;
+  static late Dio dio;
 
-  // Initialize Dio in the constructor
-  ApiManager()
-      : dio = Dio(
-          BaseOptions(
-            baseUrl: AppConstants.BaseUrl,
-            validateStatus: (status) {
-              return status != null && status < 500;
-            },
-          ),
-        );
+  static void init() {
+    dio = Dio(
+      BaseOptions(
+        baseUrl: AppConstants.BaseUrl,
+        validateStatus: (status) {
+          // Allow Dio to return responses for all status codes
+          return status != null;
+        },
+      ),
+    );
+  }
 
   Future<Response> getData(String endPoint,
-      {Map<String, dynamic>? Parameters, Map<String, dynamic>? headers}) {
+      {Map<String, dynamic>? parameters, Map<String, dynamic>? headers}) {
     return dio.get(endPoint,
-        queryParameters: Parameters, options: Options(headers: headers));
+        queryParameters: parameters, options: Options(headers: headers));
   }
 
   Future<Response> postData(String endPoint,

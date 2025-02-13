@@ -5,9 +5,9 @@ import 'package:assesment_task/core/utils/constants.dart';
 import 'package:assesment_task/global_widgets/app_icon.dart';
 import 'package:assesment_task/global_widgets/custom_button.dart';
 import 'package:assesment_task/global_widgets/text_form_feild.dart';
+import 'package:assesment_task/view/home/home_screen.dart';
 import 'package:assesment_task/view/login/Cubit/login_cubit.dart';
 import 'package:assesment_task/view/login/widgets/custom_divider.dart';
-import 'package:assesment_task/view/onbaording/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -151,13 +151,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => OnboardingScreen(),
+                              builder: (context) => HomeScreen(
+                                body: 0,
+                              ),
                             ));
                       }
                     }, builder: (context, state) {
                       if (state is LoginLoadingState) {
                         return CircularProgressIndicator(
-                          color: Colors.white,
+                          color: AppColors.buttonC,
                         );
                       }
                       return CustomButton(
