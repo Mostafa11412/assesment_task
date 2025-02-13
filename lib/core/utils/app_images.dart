@@ -18,7 +18,7 @@ class AppImages {
   static String students = "assets/images/students.svg";
   static String rate = "assets/images/rate.svg";
   static String arrow = "assets/images/arrow_left.svg";
-  static String avatar = "assets/images/avatar.jpg";
+  static String avatar = "assets/images/avatar.png";
   static String notificationRate = "assets/images/notificationRate.svg";
   static String notificationCalendar = "assets/images/notificationCalendar.svg";
   static String notificationJoin = "assets/images/notificationJoin.svg";

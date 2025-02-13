@@ -9,7 +9,7 @@ class ApiManager {
   static void init() {
     dio = Dio(
       BaseOptions(
-        baseUrl: AppConstants.BaseUrl,
+        baseUrl: AppConstants.baseUrl,
         validateStatus: (status) {
           // Allow Dio to return responses for all status codes
           return status != null;
@@ -31,13 +31,11 @@ class ApiManager {
 
   Future<Response> putData(String endPoint,
       {Map<String, dynamic>? body, Map<String, dynamic>? headers}) {
-    return dio.put(AppConstants.BaseUrl + endPoint,
-        data: body, options: Options(headers: headers));
+    return dio.put(endPoint, data: body, options: Options(headers: headers));
   }
 
   Future<Response> deleteData(String endPoint,
       {Map<String, dynamic>? body, Map<String, dynamic>? headers}) {
-    return dio.delete(AppConstants.BaseUrl + endPoint,
-        data: body, options: Options(headers: headers));
+    return dio.delete(endPoint, data: body, options: Options(headers: headers));
   }
 }

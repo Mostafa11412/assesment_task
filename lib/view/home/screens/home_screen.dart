@@ -22,7 +22,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  List<Widget> bodies = [Dashboard(), Calendar()];
+  List<Widget> bodies = [Dashboard()];
 
   @override
   Widget build(BuildContext context) {

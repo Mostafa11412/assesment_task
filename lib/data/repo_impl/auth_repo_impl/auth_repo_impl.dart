@@ -1,6 +1,6 @@
-import 'package:assesment_task/data/dataSource/dao_contract/auth_contract/auth_dao.dart';
-import 'package:assesment_task/data/model/auth_response.dart';
-import 'package:assesment_task/data/model/result.dart';
+import 'package:assesment_task/data/dataSource/dao_contract/auth_dao_contract/auth_dao_contract.dart';
+import 'package:assesment_task/data/model/auth/auth_response.dart';
+import 'package:assesment_task/data/model/auth/result.dart';
 import 'package:assesment_task/domain/repo_contract/auth_repo/auth_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';

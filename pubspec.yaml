@@ -46,6 +46,10 @@ dependencies:
   injectable: ^2.5.0
   fluttertoast: ^8.2.12
   dartz: ^0.10.1
+  meta: ^1.15.0
+  bloc: ^9.0.0
+  skeletonizer: ^1.4.3
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

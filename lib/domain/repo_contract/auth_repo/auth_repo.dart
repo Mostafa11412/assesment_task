@@ -1,4 +1,4 @@
-import 'package:assesment_task/data/model/result.dart';
+import 'package:assesment_task/data/model/auth/result.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class AuthRepo {

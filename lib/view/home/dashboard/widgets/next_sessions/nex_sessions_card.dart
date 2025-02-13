@@ -1,10 +1,15 @@
 import 'package:assesment_task/core/utils/app_images.dart';
+import 'package:assesment_task/data/model/teacher_dashboard/appointment_mode.dart';
+import 'package:assesment_task/domain/entities/teacher_dashboard_entity/appointment_entity.dart';
+import 'package:assesment_task/view/home/dashboard/cubit/dashboard_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SessionCard extends StatelessWidget {
-  const SessionCard({super.key});
+  AppointmentEntity entity;
+  SessionCard({super.key, required this.entity});
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +114,7 @@ class SessionCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 12),
               child: Text(
-                "ورشة / التفكير خارج الصندوق",
+                "ورشة / ${entity.title}",
                 style: TextStyle(
                   fontFamily: 'Zain',
                   fontSize: 14.sp,
@@ -125,7 +130,7 @@ class SessionCard extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(16.r),
                       bottomRight: Radius.circular(16.r))),
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 3),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -153,7 +158,7 @@ class SessionCard extends StatelessWidget {
                     // height: 15.h,
                   ),
                   Text(
-                    "22 أغسطس / 2024",
+                    BlocProvider.of<DashboardCubit>(context).time(entity.date!),
                     style: TextStyle(
                         fontFamily: 'Zain',
                         fontSize: 14.sp,

@@ -3,6 +3,7 @@
 import 'package:assesment_task/core/utils/app_colors.dart';
 import 'package:assesment_task/core/utils/app_images.dart';
 import 'package:assesment_task/core/utils/app_strings.dart';
+import 'package:assesment_task/view/home/home_screen.dart';
 import 'package:assesment_task/view/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,7 +24,8 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: (context) => LoginScreen(),
+          builder: (context) => LoginScreen(
+          ),
         ),
         (route) => true,
       );

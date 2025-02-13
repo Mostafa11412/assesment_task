@@ -1,11 +1,13 @@
 import 'package:assesment_task/core/utils/app_colors.dart';
+import 'package:assesment_task/domain/entities/teacher_dashboard_entity/teacher_dash_board_entity.dart';
 import 'package:assesment_task/view/home/dashboard/widgets/next_sessions/nex_sessions_card.dart';
 import 'package:assesment_task/view/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NextSessionsPart extends StatefulWidget {
-  const NextSessionsPart({super.key});
+  TeacherDashBoardEntity entity;
+  NextSessionsPart({super.key, required this.entity});
 
   @override
   State<NextSessionsPart> createState() => _NextSessionsPartState();
@@ -42,7 +44,7 @@ class _NextSessionsPartState extends State<NextSessionsPart> {
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: AppColors.buttonC)),
                 child: Text(
-                  "04",
+                  widget.entity.pendingAppointments.toString(),
                   style: TextStyle(
                       fontFamily: 'Zain',
                       fontSize: 11.sp,
@@ -87,8 +89,10 @@ class _NextSessionsPartState extends State<NextSessionsPart> {
           SizedBox(
             height: 10.h,
           ),
-          SessionCard(),
-          SessionCard(),
+          SessionCard(
+            entity: widget.entity.appointments![0],
+          ),
+          SessionCard(entity: widget.entity.appointments![1]),
         ]),
       ),
     );

@@ -12,15 +12,15 @@ class LoginCubit extends Cubit<LoginState> {
   LoginCubit(this.authRepo) : super(LoginInitialState());
 
   signIn(String email, String password) async {
-    emit(LoginLoadingState());
+    if (!isClosed) emit(LoginLoadingState());
 
     var result = await authRepo.signIn(email, password);
     result.fold(
       (l) {
-        emit(LoginSuccessState());
+        if (!isClosed) emit(LoginSuccessState());
       },
       (r) {
-        emit(LoginErrorState(r));
+        if (!isClosed) emit(LoginErrorState(r));
         debugPrint('Failed in cubit sign in');
       },
     );
